@@ -84,14 +84,11 @@ There are typically two ways of using the SDK:
 
 #### a. One-off payments
 In order to use the SDK for a one-off payment, the KongaPay SDK has a method `KongaPay.startPayment()`.
-This method takes in 3 parameters:
-1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity
-2. `bundle` - a [Bundle](http://developer.android.com/reference/android/os/Bundle.html) that contains String values of details for the payment. The bundle must
-contain `KongaPay.ARG_AMOUNT` and `KongaPay.ARG_TRANSACTION_ID` as keys. The value
-for `KongaPay.ARG_AMOUNT` is the amount to be paid, and the value for `KongaPay.ARG_TRANSACTION_ID`
-is transaction ID and must be unique every time the SDK is called.
+This method takes in 3 parameters:  
+1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity  
+2. `bundle` - a [Bundle](http://developer.android.com/reference/android/os/Bundle.html) that contains String values of details for the payment. The bundle must contain `KongaPay.ARG_AMOUNT` and `KongaPay.ARG_TRANSACTION_ID` as keys. The valuen for `KongaPay.ARG_AMOUNT` is the amount to be paid, and the value for `KongaPay.ARG_TRANSACTION_ID` is transaction ID and must be unique every time the SDK is called.  
 3. `request code` an integer value for a request code, which will be used to receive
-the response when payment is completed.
+the response when payment is completed.  
 
 An example of this is as shown below:
 
