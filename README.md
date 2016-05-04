@@ -97,7 +97,7 @@ An example of this is as shown below:
 
 ```java
 //generate unique transaction id
-String transactionID = generateTransactionIdForItem(mItem);
+String transactionID = /** call function to generate unique transaction ID **/
 
 //build bundle
 Bundle bundle = new Bundle();
