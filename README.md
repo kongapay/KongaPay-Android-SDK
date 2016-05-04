@@ -4,6 +4,9 @@ The KongaPay Android SDK is designed for use in Android. This SDK is useful for
 developers to accept payments on their native Android applications. This SDK is written
 in Java. The `minSdkVersion` that KongaPay Android SDK supports is 10.
 
+**What's new?**  
+Please check the [CHANGELOG](https://github.com/kongapay/KongaPay-Android-SDK/blob/master/CHANGELOG.md) for what's new in this version.  
+
 ## How to import the KongaPay Android SDK
 
 You can get the SDK via maven repository simply by adding the following lines to your
@@ -28,16 +31,18 @@ The SDK requires you to add the KongaPayActivity & theme within your `<applicati
 in the AndroidManifest.xml file. Add the KongaPayActivity and your manifest file should like:
 
 ```xml
-<application>
-    ...
-    <!-- other activities -->
-    <activity>...</activity>
+<manifest xlmns:android...>
+    <application>
+        ...
+        <!-- other activities -->
+        <activity>...</activity>
 
-    <!--- KongaPayActivity and theme -->
-    <activity
-        android:name="com.kongapay.android.activities.KongaPayActivity"
-        android:theme="@style/KongaPaySDK"/>
-</application>
+        <!--- KongaPayActivity and theme -->
+        <activity
+            android:name="com.kongapay.android.activities.KongaPayActivity"
+            android:theme="@style/KongaPaySDK"/>
+    </application>
+</manifest>
 ```
 
 ### 2. Build a Configuration.
