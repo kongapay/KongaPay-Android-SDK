@@ -11,7 +11,9 @@ for what's new in version [`1.0.0`](CHANGELOG.md#v100).
 ## How to import the KongaPay Android SDK
 
 You can get the SDK via maven repository simply by adding the following lines to your
-application's `build.gradle` file.
+application's `build.gradle` file.  
+
+` compile 'com.kongapay.android:kongapay:1.0.0' `
 
 
 ## How to use the KongaPay Android SDK
