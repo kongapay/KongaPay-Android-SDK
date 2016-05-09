@@ -5,7 +5,8 @@ developers to accept payments on their native Android applications. This SDK is 
 in Java. The `minSdkVersion` that KongaPay Android SDK supports is 10.
 
 **What's new?**  
-Please check the [CHANGELOG](https://github.com/kongapay/KongaPay-Android-SDK/blob/master/CHANGELOG.md) for what's new in this version.  
+Please check the [CHANGELOG](CHANGELOG.md)
+for what's new in version [`1.0.0`](CHANGELOG.md#v1.0.0).
 
 ## How to import the KongaPay Android SDK
 
@@ -119,9 +120,9 @@ To do this, the KongaPay SDK has a method `KongaPay.startPreApprovedPayment()`.
 Using this method will launch the KongaPay SDK and prompt the user to login and authorize
 the merchant to carry out transactions on behalf of the user.
 
-This method requires 2 parameters:
-1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity.
-2. `request code` - an integer value for the request, which will be used to retrieve the response when payment is completed.
+This method requires 2 parameters:  
+1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity.  
+2. `request code` - an integer value for the request, which will be used to retrieve the response when payment is completed.  
 
 An example of this is as shown below:
 
