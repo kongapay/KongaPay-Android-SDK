@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SampleApp</string>
     <string name="action_settings">Settings</string>
+    <string name="button_pay">Pay</string>
+    <string name="button_pay_recurrent">Recurrent payment</string>
+    <string name="tool_bar_title">KongaPay Sample App</string>
 </resources>

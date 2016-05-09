@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.kongapay.example.kongapaysdksample.MainActivity">
+    tools:context=".SampleActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,6 +22,22 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <Button
+        android:id="@+id/button_pay_one_off"
+        android:text="@string/button_pay"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_normal" />
 
+    <Button
+        android:id="@+id/button_pay_recurrent"
+        android:text="@string/button_pay_recurrent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_normal" />
 
 </LinearLayout>
