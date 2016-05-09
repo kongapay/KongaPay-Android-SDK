@@ -23,8 +23,8 @@ public class SampleActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_ONE_OFF_PAYMENT = 1000;
     private static final int REQUEST_CODE_KONGAPAY_PRE_APPROVED = 1001;
 
-    private static final String CLIENT_ID = "kongaPayApp";
-    private static final String CLIENT_KEY = "Kpay4pp$ss";
+    private static final String CLIENT_ID = "YOUR CLIENT ID";
+    private static final String CLIENT_KEY = "YOUR CLIENT SECRET";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
