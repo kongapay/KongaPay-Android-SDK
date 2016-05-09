@@ -6,7 +6,7 @@ in Java. The `minSdkVersion` that KongaPay Android SDK supports is 10.
 
 **What's new?**  
 Please check the [CHANGELOG](CHANGELOG.md)
-for what's new in version [`1.0.0`](CHANGELOG.md#v1.0.0).
+for what's new in version [`1.0.0`](CHANGELOG.md#v100).
 
 ## How to import the KongaPay Android SDK
 
