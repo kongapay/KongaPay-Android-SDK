@@ -23,8 +23,8 @@ public class SampleActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_ONE_OFF_PAYMENT = 1000;
     private static final int REQUEST_CODE_KONGAPAY_PRE_APPROVED = 1001;
 
-    private static final String CLIENT_ID = "YOUR CLIENT ID";
-    private static final String CLIENT_KEY = "YOUR CLIENT SECRET";
+    private static final String CLIENT_ID = "purple";
+    private static final String CLIENT_KEY = "purple";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +81,14 @@ public class SampleActivity extends AppCompatActivity {
     private void onOneOffPaymentButtonClicked() {
         String transactionId = generateUniqueTransactionId();
         String amount = "20000";
+        String userPhone = "Insert your phone number";
 
         Bundle bundle = new Bundle();
         bundle.putString(KongaPay.ARG_AMOUNT, amount);
         bundle.putString(KongaPay.ARG_TRANSACTION_ID, transactionId);
+
+        // optional for pre-filling the phone number.
+        bundle.putString(KongaPay.ARG_PHONE_NUMBER, userPhone);
 
         KongaPay.startPayment(this, bundle, REQUEST_CODE_ONE_OFF_PAYMENT);
     }
@@ -93,7 +97,13 @@ public class SampleActivity extends AppCompatActivity {
      * handles click event for the recurrent payment button
      */
     private void onRecurrentPaymentButtonClicked() {
-        KongaPay.startPreApprovedPayment(this, REQUEST_CODE_KONGAPAY_PRE_APPROVED);
+        String userPhone = "Insert your phone number";
+
+        Bundle bundle = new Bundle();
+
+        // optional for pre-filling the phone number
+        bundle.putString(KongaPay.ARG_PHONE_NUMBER, userPhone);
+        KongaPay.startPreApprovedPayment(this, bundle, REQUEST_CODE_KONGAPAY_PRE_APPROVED);
     }
 
     /**
