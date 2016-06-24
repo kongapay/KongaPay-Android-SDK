@@ -6,14 +6,18 @@ in Java. The `minSdkVersion` that KongaPay Android SDK supports is 10.
 
 **What's new?**  
 Please check the [CHANGELOG](CHANGELOG.md)
-for what's new in version [`1.0.0`](CHANGELOG.md#v100).
+for what's new in version [`1.0.1`](CHANGELOG.md#v101).
 
 ## How to import the KongaPay Android SDK
 
 You can get the SDK via maven repository simply by adding the following lines to your
 application's `build.gradle` file.  
 
-` compile 'com.kongapay.android:kongapay:1.0.0' `
+```groovy
+
+ compile 'com.kongapay.android:kongapay:1.0.1'
+
+```
 
 
 ## How to use the KongaPay Android SDK
@@ -94,7 +98,10 @@ There are typically two ways of using the SDK:
 In order to use the SDK for a one-off payment, the KongaPay SDK has a method `KongaPay.startPayment()`.
 This method takes in 3 parameters:  
 1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity  
-2. `bundle` - a [Bundle](http://developer.android.com/reference/android/os/Bundle.html) that contains String values of details for the payment. The bundle must contain `KongaPay.ARG_AMOUNT` and `KongaPay.ARG_TRANSACTION_ID` as keys. The valuen for `KongaPay.ARG_AMOUNT` is the amount to be paid, and the value for `KongaPay.ARG_TRANSACTION_ID` is transaction ID and must be unique every time the SDK is called.  
+2. `bundle` - a [Bundle](http://developer.android.com/reference/android/os/Bundle.html) that contains String values of details for the payment. The bundle must contain:
+  * `KongaPay.ARG_AMOUNT` as key, and the value is the amount to be paid.
+  * `KongaPay.ARG_TRANSACTION_ID` as keys, and the value for is the transaction ID and must be unique every time the SDK is called.
+  * `KongaPay.ARG_PHONE_NUMBER` **_(optional)_** as key, and the value represents the phone number of the user. It is useful when you want to pre-fill the phone number of the user.
 3. `request code` an integer value for a request code, which will be used to receive
 the response when payment is completed.  
 
@@ -109,6 +116,9 @@ Bundle bundle = new Bundle();
 bundle.putString(KongaPay.ARG_AMOUNT, mEditAmount.getText().toString().trim());
 bundle.putString(KongaPay.ARG_TRANSACTION_ID, transactionID);
 
+// optional to pre-fill phone number
+bundle.putString(KongaPay.ARG_PHONE_NUMBER, userPhone);
+
 //start payment
 KongaPay.startPayment(MainActivity.this, bundle, REQUEST_KONGAPAY);
 ```
@@ -122,14 +132,25 @@ To do this, the KongaPay SDK has a method `KongaPay.startPreApprovedPayment()`.
 Using this method will launch the KongaPay SDK and prompt the user to login and authorize
 the merchant to carry out transactions on behalf of the user.
 
-This method requires 2 parameters:  
+This method requires the following parameters:  
 1. `fragment` or `activity` - The first parameter is an instance of the current fragment or activity.  
-2. `request code` - an integer value for the request, which will be used to retrieve the response when payment is completed.  
+2. `bundle` (optional) - a [Bundle](http://developer.android.com/reference/android/os/Bundle.html) that contains values of details. This bundle can contain the following key, value pairs:
+  * `KongaPay.ARG_PHONE_NUMBER` and value representing the phone number of the user for pre-filling.
+3. `request code` - an integer value for the request, which will be used to retrieve the response when payment is completed.  
 
-An example of this is as shown below:
+An example of this (without pre-filling user phone number) is as shown below:
 
 ```java
 KongaPay.startPreApprovedPayment(MainActivity.this, REQUEST_KONGAPAY_PRE_APPROVED);
+```
+
+An example for using KongaPay SDK for pre-approved payments with pre-filling the user's phone number is:
+
+```java
+Bundle bundle = new Bundle();
+
+bundle.putString(KongaPay.ARG_PHONE_NUMBER, userPhone);
+KongaPay.startPreApprovedPayment(this, bundle, REQUEST_CODE_KONGAPAY_PRE_APPROVED);
 ```
 
 ### 5. Handling Results
@@ -191,7 +212,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 
 ###  6. Making payments using KongaPay payment for future pre-approved payments.
-See [this guide](https://github.com/kongapay/KongaPay-Android-SDK/blob/master/preapproved_server_side.md),
+See [this guide](preapproved_server_side.md),
 for information on how to make pre-approved payments.
 
 
